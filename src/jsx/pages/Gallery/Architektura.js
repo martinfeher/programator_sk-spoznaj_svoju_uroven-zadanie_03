@@ -6,10 +6,11 @@ import { Button, Modal } from "react-bootstrap";
 import { BsArrowLeft } from "react-icons/bs";
 import { FaCamera, FaPlus } from "react-icons/fa";
 import { imagesArchitektura } from "../../data/ArchitekturaData"; // json data source, data images
+import { Link } from "react-router-dom";
 
 export default function Architektura() {
 
-  const title = "Architektúra Fotogaléria";
+  const [title, setTitle] = useState('Architektúra Fotogaléria');
 
   const [basicModal, setBasicModal] = useState(false);
 
@@ -43,13 +44,13 @@ export default function Architektura() {
         <header></header>
         <main>
           <div className="container px-5">
-            <a href="/">
+            <Link to="/">
               <h1 className="mb-5">FOTOGALÉRIA</h1>
-            </a>
+            </Link>
             <h2>
-              <a href="/">
+              <Link to="/">
                 <BsArrowLeft size={26} className="fa-arrow-left" />
-              </a>{" "}
+              </Link>{" "}
               &nbsp;ARCHITEKTÚRA
             </h2>
             <div className="mb-5">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import CardItemWithImageText from "../components/CardItemWithImageText";
 import {
   getGalleryItems,
@@ -25,6 +26,7 @@ const Home = ({
     getGalleryItems();
   }, []);
 
+  const [title, setTitle] = useState('Fotogaléria');
   const [basicModal, setBasicModal] = useState(false);
   const [galleryTitle, setGalleryTitle] = useState("");
 
@@ -81,6 +83,13 @@ const Home = ({
 
   return (
     <>
+
+      <HelmetProvider> 
+        <Helmet>
+          <title>{title}</title>
+        </Helmet>
+      </HelmetProvider> 
+
       <ToastContainer className="position-fixed p-3" position="bottom-end">
         <Toast
           onClose={toggleToastNotification}

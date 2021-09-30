@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ImageProcessed from "./ImageProcessed";
 import { AiOutlineDelete } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const CardItemWithImageText = ({
   id,
@@ -19,7 +20,7 @@ const CardItemWithImageText = ({
   return (
     <div className="col" key={id}>
       <div className="section-card-with-image-text-effect position-relative">
-        <a href={link_processed} onMouseEnter={changeHeaderBackgroudImage}>
+        <Link to={link_processed} onMouseEnter={changeHeaderBackgroudImage}>
           <div className="card category-item">
             <ImageProcessed src={imageUrl} alt={alt} />
             <div className="card-body">
@@ -27,7 +28,7 @@ const CardItemWithImageText = ({
               <p className="card-text" />
             </div>
           </div>
-        </a>
+        </Link>
         <div className="card-delete position-absolute">
           <a
             href="# "
