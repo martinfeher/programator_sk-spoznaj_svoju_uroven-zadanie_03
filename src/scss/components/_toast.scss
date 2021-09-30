@@ -1,0 +1,6 @@
+.toast-container {
+    z-index: 200000;
+    .toast-header, .toast-body {
+        font-size: 0.95rem;
+    }
+}

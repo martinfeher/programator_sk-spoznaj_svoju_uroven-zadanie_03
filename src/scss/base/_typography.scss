@@ -1,0 +1,56 @@
+html {
+  font-size: 14px;
+  background-color: $background_color;
+}
+
+body {
+  color: $body_color;
+}
+
+h1, h2 {
+  color: $title_color;
+}
+
+h3 {
+  color: $sub_title_color;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1.15rem;
+}
+
+p {
+  color: $body_color;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+main {
+  min-height: 110vh; // testing scrolling y axis
+}

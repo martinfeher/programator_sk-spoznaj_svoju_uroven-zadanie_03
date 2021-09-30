@@ -1,0 +1,117 @@
+.modal {
+  background: rgba($color: #000000, $alpha: 0.6);
+}
+
+.modal-header {
+  height: 4rem;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 1.27rem;
+  font-weight: 600;
+  color: $sub_title_color;
+}
+
+.modal-body input {
+  font-size: 1.1rem !important;
+  color: $body_color !important;
+  padding: 1rem;
+  vertical-align: middle;
+  border: none;
+  width: 76%;
+}
+
+.modal-body form {
+  border-bottom: 2px solid $body_color;
+}
+
+.modal-body input::placeholder {
+  font-size: 1.1rem;
+  color: $body_color;
+  padding: 1rem 1rem 1rem 0 !important;
+}
+
+.modal .modal-body input:focus-visible {
+  border:none !important;
+  border-top: 0 solid #FFFFFF !important;
+  border-left: 0 solid #FFFFFF !important;
+  border-right: 0 solid #FFFFFF !important;
+}
+
+.modal .modal-body input:focus {
+  border:none !important;
+  border-top: 0 solid #FFFFFF !important;
+  border-left: 0 solid #FFFFFF !important;
+  border-right: 0 solid #FFFFFF !important;
+}
+
+.close-modal {
+  position: absolute;
+  top: -63px;
+  right: 0;
+  background: none;
+  color: #e4e4e4;
+  padding: 0 !important;
+  border: none;
+  outline: none;
+
+  &:hover {
+    color: #e4e4e4;
+  }
+
+  .close-mark {
+    font-size: 3rem;
+  }
+  .close-word {
+    position: relative;
+    top: -0.5rem;
+    right: 0.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.add-photo-btn {
+  float: right;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.add-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-transform: uppercase;
+  border: 3px dashed #e2e2e2;
+  padding: $spacing_primary;
+  color: $title_color;
+
+  p {
+    margin: 0.2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  small {
+    text-transform: lowercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .fa-plus {
+    position: relative;
+    font-size: 1.1rem;
+    right: 1rem;
+    top: 0.4rem;
+  }
+}
+.modal-footer {
+  border-top: none;
+}

@@ -1,0 +1,19 @@
+button {
+  padding: 8px 19px !important;
+}
+
+button.btn-success {
+  background-color: #42C88D;
+  border: 1px solid #37b07b;
+
+  &:hover {
+    background-color: #37b07b;
+  }
+}
+
+.btn-outline-secondary {
+  color: $body_color;
+  border: 2px solid $body_color;
+}
+
+

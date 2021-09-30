@@ -1,0 +1,89 @@
+.gallery-architektura {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("../../images/pexels-photo-261187.jpeg");
+  }
+
+  hr {
+    color: #ffffff !important;
+  }
+
+  .card svg {
+    color: $body_color !important;
+  }
+
+  .fa-arrow-left {
+    color: $title_color;
+  }
+
+  .card .card-img-top {
+    height: 100%;
+    border-radius: calc(0.25rem - 1px);
+  }
+
+  .card .card-img-top {
+    height: 12rem + 2rem;
+  }
+
+  @media (min-width: 1800px) {
+    .card .card-img-top {
+      height: 26rem + 2rem;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .card .card-img-top {
+      height: 20rem + 2rem;
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .card .card-img-top {
+      height: 18rem + 2rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .card .card-img-top {
+      height: 14rem + 2rem;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .card .card-img-top {
+      height: 12rem + 2rem;
+    }
+  }
+
+  .add-photo {
+    display: flex;
+    height: 14rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .fa-plus {
+      position: relative;
+      font-size: 1.1rem;
+      right: 14px;
+      top: 8px;
+    }
+  }
+}
+
+.modal-gallery-architektura {
+
+  button.btn-success {
+    margin: 0 0 9px;
+  }
+
+  button svg {
+    margin: 0 0 3px;;
+  }
+
+  .modal-content {
+    .add-content svg {
+      color: $body_color !important;
+    }
+  }
+}

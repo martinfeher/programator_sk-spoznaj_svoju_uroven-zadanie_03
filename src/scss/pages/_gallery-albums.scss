@@ -1,0 +1,56 @@
+.gallery-albums {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url("../../images/pexels-photo-261187.jpeg");
+  }
+
+  hr {
+    color: #ffffff !important;
+  }
+
+  .card {
+    min-height: 15.8rem;
+  }
+
+  .card-delete {
+    bottom: 1px;
+    right: 5px;
+    z-index: 1100;
+    margin: 0 1px 3px 0;
+    svg {
+      color: #d7d7d7;
+      &:hover {
+        color: #9e9e9e;
+    }
+    }
+  }
+
+  .section-card-with-image-text-effect {
+    &:hover,
+    &:focus {
+      transform: scale(1.025);
+      box-shadow: 0 10px 20px #999, 0 4px 8px #bbb;
+    }
+  }
+}
+
+.modal-gallery-albums {
+  .modal-button {
+    position: absolute;
+    right: 16px;
+    top: 85px;
+  }
+
+  .modal-body,
+  .modal-header {
+    padding-bottom: 0.6rem;
+  }
+
+  .modal-body input {
+    padding-bottom: 0.8rem !important;
+  }
+
+  .modal-content {
+    padding: 13px 6px 0px 6px;
+  }
+}

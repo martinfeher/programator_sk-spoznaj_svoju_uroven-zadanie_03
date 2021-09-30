@@ -1,0 +1,64 @@
+{
+  "gallery": [
+    {
+      "path": 1,
+      "image": {
+        "path": "landscape-meadow-field-mountains-66874.jpeg",
+        "fullpath": "images/landscape-meadow-field-mountains-66874.jpeg",
+        "name": "landscape-meadow-field-mountains-66874.jpeg",
+        "modified": "2021-08-18T16:50:27.0+0200"
+      },
+      "name": "PRÍRODA",
+      "link": "",
+      "id": 1
+    },
+    {
+      "path": 2,
+      "image": {
+        "path": "pexels-photo-261187.jpeg",
+        "fullpath": "images/pexels-photo-261187.jpeg",
+        "name": "pexels-photo-261187.jpeg",
+        "modified": "2021-09-25T16:49:15.0+0200"
+      },
+      "name": "ARCHITEKTÚRA",
+      "link": "/gallery/architektura",
+      "id": 2
+    },
+    {
+      "path": 3,
+      "image": {
+        "path": "pexels-photo-27411.jpg",
+        "fullpath": "images/pexels-photo-27411.jpg",
+        "name": "pexels-photo-27411.jpg",
+        "modified": "2021-08-16T21:22:27.0+0200"
+      },
+      "name": "ĽUDIA",
+      "link": "",
+      "id": 3
+    },
+    {
+      "path": 4,
+      "image": {
+        "path": "food-salad-healthy-lunch.jpg",
+        "fullpath": "images/food-salad-healthy-lunch.jpg",
+        "name": "food-salad-healthy-lunch.jpg",
+        "modified": "2020-12-16T03:31:44.0+0100"
+      },
+      "name": "JEDLO",
+      "link": "",
+      "id": 4
+    },
+    {
+      "path": 5,
+      "image": {
+        "path": "pexels-photo-210019.jpeg",
+        "fullpath": "images/pexels-photo-210019.jpeg",
+        "name": "pexels-photo-210019.jpeg",
+        "modified": "2021-08-16T22:57:00.0+0200"
+      },
+      "name": "AUTÁ",
+      "link": "",
+      "id": 5
+    }
+  ]
+}
