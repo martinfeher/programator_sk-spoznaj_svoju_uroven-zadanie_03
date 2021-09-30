@@ -66,6 +66,7 @@ const Home = ({
   // Delete Gallery
   const handleDeleteGallery = (path, name, id) => {
     config.APP_ENV === "production" ? deleteGalleryItem(path) : deleteGalleryItem(id);
+    getGalleryItems();
     setToastNotification(true);
     setToastMessage(`Galéria ${name} bola úspešne zmazná`);
   };
