@@ -1,3 +1,6 @@
+import { config } from "../../config"; 
+
+
 import {
   GET_GALLERY,
   SET_LOADING,
@@ -27,11 +30,20 @@ const galleryReducer = (state = initialState, action) => {
         loading: false
       };
     case DELETE_GALLERY:
-      return {
-        ...state,
-        galleryItems: state.galleryItems.filter(galleryItems => galleryItems.path !== action.payload),
-        loading: false
-      };
+      if (config.APP_ENV === "production") {
+        return {
+          ...state, 
+          galleryItems: state.galleryItems.filter(galleryItems => galleryItems.path !== action.payload),
+          loading: false
+        };
+      } else {
+        return {
+          ...state, 
+          galleryItems: state.galleryItems.filter(galleryItems => galleryItems.id !== action.payload),
+          loading: false
+        };
+      }
+      
     case SET_LOADING:
       return {
         ...state,
