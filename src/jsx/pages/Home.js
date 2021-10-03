@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProvider } from "react-helmet-async";
 import CardItemWithImageText from "../components/CardItemWithImageText";
 import {
   getGalleryItems,
@@ -24,14 +24,12 @@ const Home = ({
 }) => {
   useEffect(() => {
     getGalleryItems();
-  }, []);
+  });
 
-  const [title, setTitle] = useState('Fotogaléria');
+  const title = "Fotogaléria";
   const [basicModal, setBasicModal] = useState(false);
   const [galleryTitle, setGalleryTitle] = useState("");
-
   const [toastNotification, setToastNotification] = useState(false);
-  const [toastBgColor, setToastBgColor] = useState("Light");
 
   const toggleToastNotification = () =>
     setToastNotification(!toastNotification);
@@ -66,8 +64,7 @@ const Home = ({
   };
 
   // Delete Gallery
-  const handleDeleteGallery = (path, name, id) => {
-    config.APP_ENV === "production" ? deleteGalleryItem(path) : deleteGalleryItem(id);
+  const handleDeleteGallery = (path, name, id) => { config.APP_ENV === "production" ? deleteGalleryItem(path) : deleteGalleryItem(id);
     getGalleryItems();
     setToastNotification(true);
     setToastMessage(`Galéria ${name} bola úspešne zmazná`);
@@ -76,19 +73,18 @@ const Home = ({
   // Update Css background
   const changeHeaderBackgroudImage = (imageUrl) => {
     if (imageUrl !== "" && typeof imageUrl === "string") {
-      let backgroundVal =  "linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('" + imageUrl + "')";
+      let backgroundVal = "linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('" + imageUrl + "')";
       document.getElementById("header").style.background = backgroundVal;
     }
   };
 
   return (
     <>
-
-      <HelmetProvider> 
+      <HelmetProvider>
         <Helmet>
           <title>{title}</title>
         </Helmet>
-      </HelmetProvider> 
+      </HelmetProvider>
 
       <ToastContainer className="position-fixed p-3" position="bottom-end">
         <Toast
@@ -97,7 +93,7 @@ const Home = ({
           animation={true}
           autohide={true}
           delay={10000}
-          bg={toastBgColor}
+          bg="Light"
         >
           <Toast.Header>
             <strong className="me-auto">Správa</strong>
@@ -165,7 +161,7 @@ const Home = ({
             <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-5">
               {!loading &&
                 galleryItemsApi.length >= 1 &&
-                galleryItemsApi.slice(0, 4).map((item, index) => {
+                galleryItemsApi.map((item, index) => {
                   return (
                     <CardItemWithImageText
                       key={index}
@@ -179,39 +175,6 @@ const Home = ({
                           : ""
                       }
                       alt={item.name ? capitalizeFirstLetter(item.name) : ""}
-                      changeHeaderBackgroudImage={() =>
-                        changeHeaderBackgroudImage(
-                          item.image && item.image.fullpath
-                            ? config.API_SERVER_URL + "/" + item.image.fullpath
-                            : ""
-                        )
-                      }
-                      handleDeleteGallery={() =>
-                        handleDeleteGallery(item.path, item.name, item.id)
-                      }
-                    />
-                  );
-                })}
-            </div>
-            <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-5">
-              {!loading &&
-                galleryItemsApi.length >= 5 &&
-                galleryItemsApi.slice(4, 8).map((item, index) => {
-                  return (
-                    <CardItemWithImageText
-                      key={index}
-                      id={item.id}
-                      path={item.path}
-                      title={item.name ? item.name : ""}
-                      link={item.link}
-                      imageUrl={
-                        item.image && item.image.fullpath
-                          ? config.API_SERVER_URL + "/" + item.image.fullpath
-                          : ""
-                      }
-                      alt={
-                        item.name ? capitalizeFirstLetter(item.image.name) : ""
-                      }
                       changeHeaderBackgroudImage={() =>
                         changeHeaderBackgroudImage(
                           item.image && item.image.fullpath

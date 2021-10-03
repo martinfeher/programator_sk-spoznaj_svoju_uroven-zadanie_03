@@ -10,17 +10,15 @@ import { Link } from "react-router-dom";
 
 export default function Architektura() {
 
-  const [title, setTitle] = useState('Architektúra Fotogaléria');
+  const title = "Architektúra Fotogaléria";
 
   const [basicModal, setBasicModal] = useState(false);
 
+  // Split data initially for each image row
+  const imagesArchitekturaLghtboxItems = imagesArchitektura.slice(0, 100);
+
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxItemIndex, setLightboxItemIndex] = useState(0);
-
-  // Split data initially for each image row
-  const imageItemsSection_1 = imagesArchitektura.slice(0, 4);
-  const imageItemsSection_2 = imagesArchitektura.slice(4, 8);
-  const imageItemsSectionLightbox = imagesArchitektura.slice(0, 8);
 
   const lightboxOptions = {
     index: lightboxItemIndex,
@@ -57,7 +55,7 @@ export default function Architektura() {
               <hr />
             </div>
             <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-5">
-              {imageItemsSection_1.map((item, index) => {
+              {imagesArchitektura.map((item, index) => {
                 return (
                   <CardItemWithImage
                     src={item.src}
@@ -69,21 +67,7 @@ export default function Architektura() {
                   />
                 );
               })}
-            </div>
-            <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 g-5">
-              {imageItemsSection_2.map((item, index) => {
-                return (
-                  <CardItemWithImage
-                    src={item.src}
-                    alt={item.title}
-                    handleClickImage={handleClickImage}
-                    index={index}
-                    width={item.w}
-                    height={item.h}
-                  />
-                );
-              })}
-              <div className="col">
+              <div className="col" key={imagesArchitektura.length+1}>
                 <a href="# " onClick={() => setBasicModal(true)}>
                   <div className="card add-card">
                     <div className="card-body add-photo">
@@ -109,7 +93,7 @@ export default function Architektura() {
 
       <PhotoSwipe
         isOpen={lightboxOpen}
-        items={imageItemsSectionLightbox}
+        items={imagesArchitekturaLghtboxItems}
         options={lightboxOptions}
         onClose={() => setLightboxOpen(false)}
       />
