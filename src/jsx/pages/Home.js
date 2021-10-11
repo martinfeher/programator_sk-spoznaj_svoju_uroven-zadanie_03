@@ -24,7 +24,7 @@ const Home = ({
 }) => {
   useEffect(() => {
     getGalleryItems();
-  });
+  }, []);
 
   const title = "Fotogaléria";
   const [basicModal, setBasicModal] = useState(false);
