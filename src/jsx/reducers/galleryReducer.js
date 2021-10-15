@@ -18,11 +18,20 @@ const initialState = {
 const galleryReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_GALLERY:
+      if (config.APP_ENV === "production") {
+      return {
+        ...state,
+        galleryItems: action.payload.galleries,
+        loading: false
+      };
+    } else {
       return {
         ...state,
         galleryItems: action.payload,
         loading: false
       };
+    }
+
     case ADD_GALLERY:
       return {
         ...state,
@@ -30,16 +39,17 @@ const galleryReducer = (state = initialState, action) => {
         loading: false
       };
     case DELETE_GALLERY:
+
       if (config.APP_ENV === "production") {
         return {
           ...state, 
-          galleryItems: state.galleryItems.filter(galleryItems => galleryItems.path !== action.payload),
+          galleryItems: state.galleryItems.filter(galleryItems => galleryItems.path.toString() !== action.payload.toString()),
           loading: false
         };
       } else {
         return {
           ...state, 
-          galleryItems: state.galleryItems.filter(galleryItems => galleryItems.id !== action.payload),
+          galleryItems: state.galleryItems.filter(galleryItems => parseInt(galleryItems.id) !== parseInt(action.payload)),
           loading: false
         };
       }

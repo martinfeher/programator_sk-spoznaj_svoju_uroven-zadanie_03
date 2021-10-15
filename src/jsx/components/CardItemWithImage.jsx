@@ -13,7 +13,7 @@ export default function CardItemWithImage({ src, alt, handleClickImage, index, w
           }}
         >
           <div className="card item-image">
-            <ImageProcessed src={src} alt={alt} width={width} height={height} index={index} />
+            <ImageProcessed src={src} alt={alt} width={width} height={height} index={index} cardType="image" />
           </div>
         </a>
       </div>

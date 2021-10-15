@@ -65,7 +65,6 @@ const Home = ({
 
   // Delete Gallery
   const handleDeleteGallery = (path, name, id) => { config.APP_ENV === "production" ? deleteGalleryItem(path) : deleteGalleryItem(id);
-    getGalleryItems();
     setToastNotification(true);
     setToastMessage(`Galéria ${name} bola úspešne zmazná`);
   };
@@ -171,14 +170,15 @@ const Home = ({
                       link={item.link}
                       imageUrl={
                         item.image && item.image.fullpath
-                          ? config.API_SERVER_URL + "/" + item.image.fullpath
+                          ? config.API_SERVER_URL + config.IMAGE_URL_PATH + "/" + item.image.fullpath
                           : ""
                       }
+                      imageFullpath={item.image && item.image.fullpath}
                       alt={item.name ? capitalizeFirstLetter(item.name) : ""}
                       changeHeaderBackgroudImage={() =>
                         changeHeaderBackgroudImage(
                           item.image && item.image.fullpath
-                            ? config.API_SERVER_URL + "/" + item.image.fullpath
+                            ? config.API_SERVER_URL + config.IMAGE_URL_PATH + "/" + item.image.fullpath
                             : ""
                         )
                       }

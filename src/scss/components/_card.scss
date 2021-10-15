@@ -12,6 +12,8 @@
 
   .card-body {
     height: 1rem;
+    display: flex;
+    height: 100%;
   }
 
   @media (min-width: 1800px) {
@@ -69,6 +71,10 @@
 
   .card-title {
     margin-bottom: .2rem;
+    display: inline-block;
+    align-self: flex-end;
+    margin: 0 auto;
+    text-transform: uppercase;
   }
 
   .add-card {

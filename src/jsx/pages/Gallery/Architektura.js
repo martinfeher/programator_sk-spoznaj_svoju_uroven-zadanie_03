@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 export default function Architektura() {
 
   const title = "Architektúra Fotogaléria";
-
   const [basicModal, setBasicModal] = useState(false);
 
   // Split data initially for each image row

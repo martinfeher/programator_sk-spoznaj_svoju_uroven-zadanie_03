@@ -36,9 +36,6 @@ export const addGalleryItem = gallery => async dispatch => {
 
     const new_api_item = {};
       new_api_item.name = gallery.galleryTitle;
-      new_api_item.path = gallery.galleryTitle;
-      new_api_item.image = {};
-      new_api_item.image.path = "";
 
     const res = await fetch(config.API_SERVER_URL + "/gallery", {
       method: 'POST',
@@ -54,6 +51,7 @@ export const addGalleryItem = gallery => async dispatch => {
       payload: data
     });
   } catch (err) {
+    console.log(err)
     dispatch({
       type: GALLERY_ERROR,
       payload: err.response
@@ -77,9 +75,10 @@ export const deleteGalleryItem = path => async (dispatch) => {
       payload: path,
     });
   } catch (err) {
+    console.log(err)
     dispatch({
       type: GALLERY_ERROR,
-      payload: err.response.statusText,
+      payload: err.response,
     });
   }
 };

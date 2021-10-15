@@ -10,6 +10,7 @@ const CardItemWithImageText = ({
   title,
   link,
   imageUrl,
+  imageFullpath,
   alt,
   changeHeaderBackgroudImage,
   handleDeleteGallery,
@@ -22,7 +23,7 @@ const CardItemWithImageText = ({
       <div className="section-card-with-image-text-effect position-relative">
         <Link to={link_processed} onMouseEnter={changeHeaderBackgroudImage}>
           <div className="card category-item">
-            <ImageProcessed src={imageUrl} alt={alt} />
+            <ImageProcessed src={imageUrl} alt={alt} imageFullpath={imageFullpath} cardType="imageAndText" />
             <div className="card-body">
               <h3 className="card-title">{title}</h3>
               <p className="card-text" />
@@ -36,7 +37,6 @@ const CardItemWithImageText = ({
             onClick={handleDeleteGallery}
           >
             <AiOutlineDelete size={19} />
-            {/* vymazať */}
           </a>
         </div>
       </div>
