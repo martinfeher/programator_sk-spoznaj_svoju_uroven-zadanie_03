@@ -18,7 +18,7 @@ To open the application, you can open http://localhost:3000 in your browser.
 Apllication:
 - It includes fetch requests GET, POST, DELETE data from the API server.
 - It includes an option to add the gallery items.
-- Lazy loading images, images are loading when they appear on the screen.
+- Lazy loading images, the images are loading when they appear on the device screen.
 
 You can add the `.env` file with a variable `REACT_APP_ENV=production` to switch the api server url from the test `http://localhost:5000` to `http://api.programator.sk`
 
